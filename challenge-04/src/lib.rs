@@ -13,13 +13,13 @@ pub fn check_file(file: &String) -> bool {
     first_part_filtered == second_part
 }
 
-pub fn check_files(files: Vec<String>) -> Vec<String> {
+pub fn check_files(files: Vec<&str>) -> Vec<String> {
 
     let mut correct_files: Vec<String> = Vec::new();
 
     for file in files {
-        if check_file(&file) {
-            correct_files.push(file);
+        if check_file(&file.to_string()) {
+            correct_files.push(file.to_string());
         }
     }
 
