@@ -1,8 +1,9 @@
+#[derive(Debug)]
 pub struct User {
     pub id: String,
     pub username: String,
     pub email: String,
-    pub age: Option<u8>,
+    pub age: Option<String>,
     pub location: Option<String>,
 }
 
@@ -55,7 +56,14 @@ impl User {
         true
     }
 
+    pub fn is_valid_age(&self) -> bool {
+        match self.age.clone().unwrap_or("1".to_string()).parse::<u8>() {
+            Err(_) => false,
+            Ok(_) => false,
+        }
+    }
+
     pub fn is_valid(&self) -> bool {
-        self.is_valid_id() && self.is_valid_username() && self.is_valid_email()
+        self.is_valid_id() && self.is_valid_username() && self.is_valid_email() && self.is_valid_age()
     }
 }

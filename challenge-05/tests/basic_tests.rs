@@ -87,7 +87,7 @@ mod tests {
             id: "1a421fa".to_string(),
             username: "alex".to_string(),
             email: "alex@gmail.com".to_string(),
-            age: Some(18),
+            age: Some("18".to_string()),
             location: Some("Barcelona".to_string()),
         };
 
