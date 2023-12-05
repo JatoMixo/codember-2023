@@ -14,7 +14,7 @@ fn is_alphanumeric_string(string: &String) -> bool {
         }
     }
 
-    true
+    true && !string.is_empty()
 }
 
 impl User {
@@ -53,13 +53,13 @@ impl User {
             return false;
         }
 
-        true
+        true && !self.email.is_empty()
     }
 
     pub fn is_valid_age(&self) -> bool {
         match self.age.clone().unwrap_or("1".to_string()).parse::<u8>() {
             Err(_) => false,
-            Ok(_) => false,
+            Ok(_) => true,
         }
     }
 

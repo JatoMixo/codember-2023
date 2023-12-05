@@ -63,9 +63,9 @@ mod tests {
         assert_eq!(valid_user.is_valid_email(), true);
 
         let mut invalid_user = User {
-            id: "___".to_string(),
-            username: "___".to_string(),
-            email: "@potato.com".to_string(),
+            id: "asdasd".to_string(),
+            username: "asdasd".to_string(),
+            email: "@@@.com".to_string(),
             age: None,
             location: None,
         };
